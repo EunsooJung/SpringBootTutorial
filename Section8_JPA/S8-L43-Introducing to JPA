@@ -1,0 +1,50 @@
+Section8
+	Lecture 43: Introducing to JPA
+
+1. What is JPA ?
+    The Java Persistence API is the standard in Java for ORM
+        Object Relational Mapping
+    The API is designed to build a bridge between object data in java, and relational data in a database.
+    Traditionally has been used with SQL Relational database.
+    Object Relational Mapping
+2. JPA Entities
+    A JPA Entity is just a POJO - Plain Old Java Object
+    Generally it should only have properties and getters and setters.
+    Can have relationships with other Entities.
+    Order, Order Lines, Products
+3. Entity Manager
+    An Entity Manager is the object use to persist / fetch objects form the database.
+    This will handle all the SQL under the covers, and binding of the relational data to the entity object.
+4. Transactions
+    Transactions are an important concept.
+    Transactions allow you to rollback or commit.
+    This avoids partial transactions being persisted.
+    If an error occurs, you can undo prior updates.
+5. Relationships
+    OneToOne - each entity has exactly one reference to the other.
+    OneToMany/ManyToOne - A list, An order would have many line. But an order line belongs to just one order.
+    ManyToMany - Two related lists.
+    Embedded - an ‘object’ stored within a table. Used for common sets of properties.
+
+6. Data Types
+    Java                                                       SQL
+    String                                                         VARCHAR(CHAR, VARCHAR2, CLOB, TEXT)
+    Number, Int, Long, Float, Double, Short, byte                  NUMERIC
+    Boolean                                                        Boolean
+    Date                                                           TIMESTAMP
+
+7. Criteria API
+    The Criteria API is a Java based API which can be used to query for object from the database.
+    Written in Java, not SQL
+    Converted into SQL bye the JPA implementation.
+
+8. Data Access Objects
+    The using Data Access Objects(aka DAOs) is a common design pattern with JPA.
+    JPA is a good standard, it also can be called ‘leaky’, since persistence details leak into the implementation.
+    This allow for clean abstraction of dealing with the EntityManager and transactions.
+
+9. Repository Pattern
+    Very similar to the DAO pattern.
+    Offers a greater abstraction than the DAO pattern.
+    Used by Spring Data JPA
+    Becoming more popular.

@@ -1,0 +1,21 @@
+Section 8
+	Lecture 51: JPA Integration Test
+
+1. Create new Package in the test/java/ej.springframework.config
+2. Create new Java configuration file named JpaIntegrationConfig.java:
+   test/java/ej.springframework.config.JpaIntegrationConfig.java
+3. Add @Configuration annotation: It makes for Java based configuration for Spring
+4. Add @EnableAutoConfiguration: It makes for Java based configuration automatically by default.
+5. Create New ProductServiceJpaDaoImplTest.java (shift + command + t key)
+ 5.1 Add @RunWith(SpringJunit4ClassRunner.class) annotation
+ 5.2 Add @SpringApplicationConfiguration(JpaIntegrationConfig.class)
+ 5.3 Add @ComponentScan("ej.springframework") annotation to scan package and look into subpackages
+ 5.4 Injected ProductService DI
+  - Declare private field
+  - Declare setter based DI
+6. Run and Inspect test result.
+7. Diable spring.profiles.active=jpadao property in the application.properties
+ 7.1 Run and Inspect test result: It must be fail.
+ 7.2 Add @ActiveProfile("jpadao") annotation in the JpaIntegrationConfig.java : It must be fail.
+ 7.3 Add @ActiveProfile("jpadao") annotation in the ProductServiceJpaDaoImplTest.java
+8. Run and inspect test result.

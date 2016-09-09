@@ -1,0 +1,28 @@
+Section 6
+ Lecture 30: Listing Products
+ - Domain, Service, Controller and Thymleaf
+
+ 1. Create new package: ej.springframework.domain
+  1.1 Create new Class: ej.springframework.domain.Product.java
+
+ 2. Create new package: ej.springframework.services
+  2.1 Create new interface: ej.springframework.services.ProductService.java
+  2.2 Implements listAllProduct() interface method
+  2.3 Create new class that implements ProductService interface: ProductServiceImpl.java
+   - IntelliJ Tip: command key + n --> implements method
+   2.3.1 Implement ProductService's method
+   2.3.2 Add @Service annotation in the ProductServiceImpl class
+
+ 3. Create new ProductController: ej.springframework.controller.ProductController.java
+  3.1 Add @Controller annotation in the ProductController class
+  3.2 Implement ProductController class
+   3.2.1 setProductService(..)
+   3.2.2 listProducts(...)
+  3.3 Add @Autowired annotation in the setProductService(..) method to bean inject
+  3.4 Add @RequestMapping() annotation in the listProducts(..) method
+
+ 4. Create new products.html: resources/templates/products.html
+  4.1 Define xml namespace: Copy from index.html and paste to products.html into the html start tag
+  4.2 Copy head contents from index.html and paste to the products.html head contents
+  4.3 Define bootstrap container and implement other contents
+

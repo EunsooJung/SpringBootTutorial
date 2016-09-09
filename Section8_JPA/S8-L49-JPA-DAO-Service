@@ -1,0 +1,24 @@
+Section 8
+	Lecture 49: JPA DAO(Data Access Object) Service
+
+1. Create new ProductServiceJpaDaoImpl.java in the services package and implements methods.
+2. Declare service component using the @Service annotation in the ProductServiceJpaDaoImpl class
+3. Declare profile configuration using the @Profile annotation in the ProductServiceJpaDaoImpl class
+4. Declare profile map using the @Profile annotation in the ProductServiceImpl class
+5. Setup profile configuration in the application.properties to active
+6. Setup entity manager factory in the ProductServiceJpaDaoImpl.java (to use Thread Safe)
+7. Create Setter for the entity manager factory
+8. Add @PersistenceUnit JPA annotation (Note: It's not spring annotation) to injecting entity manager factory.
+9. Declare and implements listAll() method ProductServiceJpaDaoImpl.java
+ 9.1 Declare Entity Manager
+ 9.2 Declare return using the declared entity manager
+10. Declare and implements getById() method ProductServiceJpaDaoImpl.java
+
+11. Declare and implements saveOrUpdate() method ProductServiceJpaDaoImpl.java
+
+12. Declare and implements delete() method ProductServiceJpaDaoImpl.java
+
+13. Add version property in the productform.html
+
+14. Run and Test
+

@@ -1,0 +1,11 @@
+Section 6
+ Lecture 28: Creating an Index page and Running via Spring Boot
+
+ 1. Create new index.html file into the resources/templates/index.html
+ 2. Define index.html page
+  2.1 Define Thymeleaf namespace into the index.html file
+  2.2 Define page title, description and meta
+      (Notice: When we use the meta tag in html page that has to close meta tag "/>")
+ 3. Create New Controller package and controller class: ej.springframework.controllers.IndexController.java
+  3.1 Implement IndexController.java
+  3.2 Run and Text

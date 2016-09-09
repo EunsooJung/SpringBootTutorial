@@ -1,0 +1,11 @@
+Section 8
+	Lecture 46: JPA Optimistic Locking
+
+1. Add new "version" property into the Product.java: for the version
+ - private Integer version
+ - Create new getter and setter method into the ej.springframework.domain.Product.java
+ - Add @Version annotation in the version
+
+2. Run and Test:
+ - Inspect the H2 database via the DB console.
+ - version attribute in h2 database

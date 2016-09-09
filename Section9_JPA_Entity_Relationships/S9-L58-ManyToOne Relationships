@@ -1,0 +1,14 @@
+Section 9
+    Lecture 58: Many to One Entity Relationships
+
+1. Create New Cart Object: ej.springframework.domain.Cart.java
+ 1.1 Add @Entity annotation on the Cart class
+
+2. Create New CartDetail.java: ej.springframework.domain.CartDetail.java
+ 2.1 Add @Entity annotation on the CartDetail class
+ 2.2 Implements ...
+
+1. Add cascade property into the User.java
+ 1.1 Create setter and getter method
+
+2.

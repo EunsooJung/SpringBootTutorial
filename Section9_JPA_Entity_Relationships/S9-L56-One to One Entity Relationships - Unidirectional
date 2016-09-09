@@ -1,0 +1,56 @@
+Section 9
+    Lecture 56: One to One Entity Relationships - Unidirectional
+
+0. Add encryption library jasypt into the pom.xml
+
+1. Add private User user; filed
+ 1.1 Add @OneToOne(cascade = {CascadeType.All}) annotation on the private User field
+
+2. Create New Entity Class named User: ej.springframework.domain.User.java
+ 2.1 Add @Entity annotation
+ 2.2 Create new setter and getter method for User Entity Object class
+ 2.2 Add @Id, @GeneratedValue and @Version annotation
+ 2.3 Add @OneToOne(cascade = {CascadeType.All}) annotation on the private User field
+ 2.4 Add @Transient annotation on the password field to store data with encrypted password
+
+3. Refactoring services sub-package structures
+ 3.1 create new package jpaservices: ej.springframework.services.jpaservices
+  3.1.1 Refactoring move all *JpaDaoImpl.java files to jpaservices package
+ 3.2 create new package mapservices: ej.springframework.services.mapservices
+  3.2.1 Refactoring move AbstractMapService.java and all *ServiceImpl.java files to mapservices package
+ 3.3 create new package security: ej.springframework.services.security
+
+4. Create New configuration java file: ej.springframework.config.CommonBeanConfig.java
+ 4.1 Add @Configuration annotation
+ 4.2 Create new StringPasswordEncryptor storingEncryptor() method
+ 4.2 Add @Bean Annotation on the StringPasswordEncryptor storingEncryptor() method
+
+5. Create and Implements new UserService Class
+
+6. Create new interface EncryptionService.java: ej.springframework.services.security.EncryptionService.java
+ 6.1 Declare methods
+
+7. Create new EncryptionService interface's implements class:
+   - ej.springframework.services.security.EncryptionServiceImpl.java
+ 7.1 Add @Service annotation on the EncryptionServiceImpl class
+ 7.2 Declare Strong Encryptor library.
+ 7.3 Injecting setter based DI for the Encryptor
+ 7.4 Implements methods
+
+8. Refactoring classes in the jpaservices package
+ 8.1 Create New AbstractJpaService.java
+ 8.2 Refactoring CustomerServiceJPADaoImpl.java to use the EncryptionService
+  8.2.1 Applying Encryption Service
+  8.2.2 Injecting setter based DI for the EncryptionService.java
+
+9. Refactoring AbstractMapService.java: ej.springframework.services.mapservices.AbstractMapService.java
+ 9.1 Remove loadDomainObjects() method
+
+9. Create New UserService Map Class:
+   - ej.springframework.services.mapservices.UserServiceMapImple.java
+
+10. Create New UserServiceJpaDaoImpl.java
+ 10.1 Applying password into the Customer savceOrUpdate(..) method
+
+11. Create New CustomerServiceJpaDaoImplTest.java
+ 11.1 Run and Test

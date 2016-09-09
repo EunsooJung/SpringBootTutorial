@@ -1,0 +1,7 @@
+Section 6
+ Lecture 33: Updating a new Product
+  - Key Concepts: Spring MVC and ThymeLeaf as the templates engine
+
+  1. Create new edit() method into the ProductController.java
+  2. Add <th> and <td> tag to edit function into the products.html
+  3. Run and Test

@@ -1,0 +1,14 @@
+Section 6
+ Lecture 32: Creating a new Product
+  - Key Concepts: Spring MVC and ThymeLeaf as the templates engine
+
+ 1. Create new method into the ProductController.java and implements
+ 2. Create new productform.html and implements
+ 3. Create new method with @RequestMapping("/product/new") annotation in the ProductController.java
+ 4. Create new method with @RequestMapping(..., method = RequestMethod.POST) annotation in the ProductController.java
+ 5. Add saveOrUpdateProduct() method in the ProductService interface
+ 6. Add saveOrUpdateProduct() method and implements into the ProductServiceImpl.java
+  6.1 Add getNextKey() method to generate productId gradually into the ProductServiceImpl.java
+ 7. Add and implements div tag to input new product into the products.html
+ 8. Run and Test
+

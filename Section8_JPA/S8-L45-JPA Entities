@@ -1,0 +1,8 @@
+Section 8
+	Lecture 44: JPA Entities
+
+1. Add @Entity annotation in ej.springframework.domain.Product.java
+2. Add @Id and @GeneratedValue annotation above the "private Integer id;"
+3. Run and Test
+ - Inspect the H2 database via the DB console.
+ - Modify h2 jdbc url: jdbc:h2:mem:testdb

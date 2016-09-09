@@ -1,0 +1,7 @@
+Section 8
+	Lecture 44: Add JPA Maven Dependencies
+
+1. Add Spring-boot-starter-jpa in POM.xml
+2. Add H2 DI in the POM.xml
+3. Modify SpringmvcApplication.java to use context
+4. Run and Test ( count beans )

@@ -1,0 +1,12 @@
+Section 8
+	Lecture 50: Bootstrap Data
+
+1. Create New Package in the ej.springframework package: ej.springframework.bootstrap
+2. Create new class named SpringJPABootstrap.java in the ej.springframework.bootstrap package
+3. Implements ej.springframework.bootstrap.SpringJPABootstrap.java
+ - Declare spring component using the spring @Component annotation
+ - Declare private ProductService field
+ - Declare Setter based DI for the ProductServcie using the @Autowired spring annotation
+ - implements onApplicationEvent(..) method
+
+4. Run and See the result behaviors

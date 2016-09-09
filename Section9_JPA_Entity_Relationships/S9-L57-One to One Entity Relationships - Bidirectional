@@ -1,0 +1,13 @@
+Section 9
+    Lecture 57: One to One Entity Relationships - Bidirectional
+
+1. Refactoring Customer.java
+ 1.1 Remove Cascade user
+
+2. Refactoring User.java
+ 2.1 Add Customer property
+ 2.2 Create Customer setter and getter method
+ 2.3 Add customer.setUser(this); in the setCustomer(..) method
+
+3. Create new UserServiceJpaDaoImplTest.java
+3.1 Implements and Test

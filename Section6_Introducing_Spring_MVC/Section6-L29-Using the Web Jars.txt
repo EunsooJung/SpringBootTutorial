@@ -1,0 +1,10 @@
+Section 6
+ Lecture 29: Using the Web Jars
+
+ 1. Add WebJars dependency into the pom.xml (http://webjars.com)
+  1.1 Add dependency bootstrap and jquery.js
+ 2. Add Bootstrap and jquery lib into the index.html
+ 3. Create new Package named css: resource/static/css
+  3.1 Create new css file named spring-core.css: resource/static/css/spring-core.css
+ 4. Add Bootstrap container into the index.html
+

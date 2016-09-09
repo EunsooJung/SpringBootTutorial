@@ -1,0 +1,7 @@
+Section 8
+	Lecture 54: Bonus - Debugging Spring Boot Auto Config
+
+1. Go to Spring Boot Server Start menu
+2. Select "Edit Configurations" option in select box
+3. Spring Boot --> SpringmvcApplication --> Configuration --> Program arguments --> input "--debug" --> ok
+4. Run and See AUTO-CONFIGURATION REPORT
