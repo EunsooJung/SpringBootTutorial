@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 /**
  * Created by eunsoojung on 9/8/16.
+ * Entity Object
  */
 @Entity
 public class CartDetail implements DomainObject {
