@@ -11,4 +11,10 @@ Section 9
 
 2. Add hibernate strategy in the resources/application.properties
  - spring.jpa.hibernate.naming-strategy=org.hibernate.cfg.DefaultComponentSafeNamingStrategy
- 2.1
+
+3. Run and See the results
+
+4. Review the H2 Database using H2-Console
+ 4.1 Customer Table
+ 4.2 User Table
+
