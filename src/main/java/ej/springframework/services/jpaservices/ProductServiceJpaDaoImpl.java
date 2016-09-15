@@ -1,6 +1,8 @@
 package ej.springframework.services.jpaservices;
 
+import ej.springframework.domain.Customer;
 import ej.springframework.domain.Product;
+import ej.springframework.domain.User;
 import ej.springframework.services.ProductService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;

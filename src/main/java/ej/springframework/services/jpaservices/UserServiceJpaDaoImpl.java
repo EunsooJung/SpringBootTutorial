@@ -1,5 +1,6 @@
 package ej.springframework.services.jpaservices;
 
+//import ej.springframework.domain.Customer;
 import ej.springframework.domain.User;
 import ej.springframework.services.UserService;
 import ej.springframework.services.security.EncryptionService;
@@ -9,8 +10,6 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import java.util.List;
-
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 /**
  * Created by eunsoojung on 9/7/16.

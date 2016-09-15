@@ -8,13 +8,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.test.annotation.SystemProfileValueSource;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by eunsoojung on 9/8/16.
@@ -41,7 +38,7 @@ public class UserServiceJpaDaoImplTest {
     public void testSaveOfUser() throws Exception {
         User user = new User();
 
-        user.setUername("TestUSerName");
+        user.setUsername("TestUSerName");
         user.setPassword("TestPassword");
 
         User savedUser = userService.saveOrUpdate(user);
@@ -57,7 +54,7 @@ public class UserServiceJpaDaoImplTest {
     public void testSaveOrUserWithCustomer() throws Exception {
         User user = new User();
 
-        user.setUername("TestUserName");
+        user.setUsername("TestUserName");
         user.setPassword("myPassoword");
 
         Customer customer = new Customer();
@@ -80,7 +77,7 @@ public class UserServiceJpaDaoImplTest {
 
         User user = new User();
 
-        user.setUername("TestUserName");
+        user.setUsername("TestUserName");
         user.setPassword("myPassoword");
 
         user.setCart(new Cart());
@@ -96,7 +93,7 @@ public class UserServiceJpaDaoImplTest {
     public void testAddCartToUserWithCartDetails() throws Exception {
         User user = new User();
 
-        user.setUername("S9-L58-TestUserName");
+        user.setUsername("S9-L58-TestUserName");
         user.setPassword("S9-L58-TestUserPassword");
 
         user.setCart(new Cart());
@@ -124,7 +121,7 @@ public class UserServiceJpaDaoImplTest {
     public void testAddAndRemoveCartToUserWithCartDetails() throws Exception {
         User user = new User();
 
-        user.setUername("S9-L58-TestUserName");
+        user.setUsername("S9-L58-TestUserName");
         user.setPassword("S9-L58-TestUserPassword");
 
         user.setCart(new Cart());

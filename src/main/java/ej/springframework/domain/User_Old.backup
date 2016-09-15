@@ -1,15 +1,19 @@
 package ej.springframework.domain;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToOne;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 /**
- * Created by eunsoojung on 9/9/16.
+ * Created by eunsoojung on 9/7/16.
  */
 @Entity
-public class User extends AbstractDomainClass  {
+public class User_Old implements DomainObject {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
+    @Version
+    private Integer version;
 
     private String username;
 
@@ -17,13 +21,30 @@ public class User extends AbstractDomainClass  {
     private String password;
 
     private String encryptedPassword;
-    private Boolean enabled = true;
-
+    private Boolean enable = true;
+    // S9-L57
     @OneToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     private Customer customer;
 
+    // S9-L58
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private Cart cart;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
 
     public String getUsername() {
         return username;
@@ -49,12 +70,12 @@ public class User extends AbstractDomainClass  {
         this.encryptedPassword = encryptedPassword;
     }
 
-    public Boolean getEnabled() {
-        return enabled;
+    public Boolean getEnable() {
+        return enable;
     }
 
-    public void setEnabled(Boolean enabled) {
-        this.enabled = enabled;
+    public void setEnable(Boolean enable) {
+        this.enable = enable;
     }
 
     public Customer getCustomer() {
@@ -65,7 +86,7 @@ public class User extends AbstractDomainClass  {
         this.customer = customer;
         customer.setUser(this);
     }
-
+    // S9-L58
     public Cart getCart() {
         return cart;
     }
@@ -73,5 +94,4 @@ public class User extends AbstractDomainClass  {
     public void setCart(Cart cart) {
         this.cart = cart;
     }
-
 }

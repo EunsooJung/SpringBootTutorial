@@ -1,5 +1,7 @@
 package ej.springframework.services;
 
+import ej.springframework.domain.User;
+
 import java.util.List;
 
 /**

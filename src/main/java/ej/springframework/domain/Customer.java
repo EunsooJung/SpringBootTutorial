@@ -6,14 +6,17 @@ import javax.persistence.*;
  * Created by eunsoojung on 9/1/16.
  */
 @Entity
-public class Customer implements DomainObject {
+// public class Customer implements DomainObject {
+public class Customer extends AbstractDomainClass {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+/*
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
+private Integer id;
 
-    @Version
-    private Integer version;
+@Version
+private Integer version;
+*/
 
     private String firstName;
     private String lastName;
@@ -35,7 +38,7 @@ private String state;
 private String zipCode;
 */
 
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     private User user;
 //    S9-L56
 //    @OneToOne(cascade = {CascadeType.ALL})
@@ -45,17 +48,19 @@ private String zipCode;
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+//    public void setId(Integer id) {
+//        this.id = id;
+//    }
 
-    public Integer getVersion() {
-        return version;
-    }
+/*
+public Integer getVersion() {
+return version;
+}
 
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
+public void setVersion(Integer version) {
+this.version = version;
+}
+*/
 
     public String getFirstName() {
         return firstName;
@@ -153,4 +158,5 @@ private String zipCode;
     public void setUser(User user) {
         this.user = user;
     }
+
 }

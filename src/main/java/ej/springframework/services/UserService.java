@@ -7,4 +7,5 @@ import ej.springframework.domain.User;
  */
 public interface UserService extends CRUDService<User> {
 
+    // User saveOrUpdate(User domainObject);
 }

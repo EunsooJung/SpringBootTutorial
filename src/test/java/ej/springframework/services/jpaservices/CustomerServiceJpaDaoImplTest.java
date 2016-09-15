@@ -13,8 +13,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by eunsoojung on 9/8/16.
  */
@@ -58,7 +56,7 @@ public class CustomerServiceJpaDaoImplTest {
         Customer customer = new Customer();
         User user = new User();
 
-        user.setUername("Test User Name");
+        user.setUsername("Test User Name");
         user.setPassword("TestPassword");
 
         customer.setUser(user);
