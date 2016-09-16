@@ -1,0 +1,27 @@
+Section 9
+    Lecture 59: JPA Many to Many Relationships
+
+1. Create new package named security: ej.springframework.domain.security
+ 1.1 Create new Role class: ej.springframework.domain.security.Role.java
+ 1.2 Add @Entity annotation to make JPA Entity class on the Role class
+ 1.3 Create role property
+ 1.4 Define User list using ArrayList constructor
+ 1.5 Add @ManyToMany and @JoinTable annotations
+ 1.5 Create setter and getter method for the properties(fields)
+ 1.7 Add addUser(User user) and removeUser(User user)method to support bidirectional
+
+2. Add Role property in the User.java
+ 2.1 Add @ManyToMany and @JoinTable annotations on the List<Role> property
+ 2.2 Create setter and getter method for List<Role> property(field)
+ 2.3 Create and implements new addRole(Role role) method
+ 2.4 Add addRole(Role role) and removeRole(Role role) methods and implements
+
+3. Create Role service interface
+
+4. Create new RoleServiceJpaImple.java
+
+5. Create new RoleServiceImple.java
+
+6. Applying for role service in the SpringBootstrap.java
+
+
