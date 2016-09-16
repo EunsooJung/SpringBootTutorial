@@ -16,12 +16,22 @@ Section 9
  2.3 Create and implements new addRole(Role role) method
  2.4 Add addRole(Role role) and removeRole(Role role) methods and implements
 
-3. Create Role service interface
+3. Create Role service interface: ej.springframework.services.RolsService.java
+  - extends CRUDService<Role>
 
-4. Create new RoleServiceJpaImple.java
+4. Create new RoleServiceJpaImpl.java: ej.springframework.services.jpaservices.RoleServiceJpaImpl.java
+ 4.1 extends AbsractJpaDaoService and implements methods for the RoleService interface
+ 4.2 Add @Service and @Profile("jpadao") annotations on the RoleServiceJpaImpl class
 
-5. Create new RoleServiceImple.java
+5. Create new Map Service that named RoleServiceImpl.java
+ 5.1 Add @Service and @Profile("map") annotations on the RoleServiceImpl class
 
 6. Applying for role service in the SpringBootstrap.java
+ 6.1 Add RoleService property
+ 6.2 Create Setter method for the RoleService property
+ 6.3 Add DI using the @Autowired annotation
+ 6.4 Create new loadRoles() method
+ 6.5 Create new assignUsersToDefaultRole();
+ 6.6 Applying Role Service methods to the onApplicationEvent(..) method: refer to SpringBootstrap.java source code
 
 

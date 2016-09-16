@@ -1,8 +1,10 @@
 package ej.springframework.bootstrap;
 
 import ej.springframework.domain.*;
+import ej.springframework.domain.security.Role;
 import ej.springframework.enums.OrderStatus;
 import ej.springframework.services.ProductService;
+import ej.springframework.services.RoleService;
 import ej.springframework.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
@@ -24,6 +26,8 @@ public class SpringJPABootstrap implements ApplicationListener<ContextRefreshedE
     //private CustomerService customerService;
     private UserService userService;
 
+    private RoleService roleService;
+
     @Autowired
     public void setProductService(ProductService productService) {
         this.productService = productService;
@@ -33,7 +37,13 @@ public class SpringJPABootstrap implements ApplicationListener<ContextRefreshedE
     public void setUserService(UserService userService) {
         this.userService = userService;
     }
-/*
+
+    @Autowired
+    public void setRoleService(RoleService roleService) {
+        this.roleService = roleService;
+    }
+
+    /*
 
 @Autowired
 public void setCustomerService(CustomerService customerService) {
@@ -47,7 +57,29 @@ this.customerService = customerService;
         loadUserAndCustomers();
         loadCarts();
         loadOrderHistory();
+        loadRoles();
+        assignUsersToDefaultRole();
         //loadCustomers();
+    }
+
+    private void assignUsersToDefaultRole() {
+        List<Role> roles = (List<Role>) roleService.listAll();
+        List<User> users = (List<User>) userService.listAll();
+
+        roles.forEach(role -> {
+            if (role.getRole().equalsIgnoreCase("CUSTOMER")) {
+                users.forEach(user -> {
+                    user.addRole(role);
+                    userService.saveOrUpdate(user);
+                });
+            }
+        });
+    }
+
+    private void loadRoles() {
+        Role role = new Role();
+        role.setRole("CUSTOMER");
+        roleService.saveOrUpdate(role);
     }
 
     public void loadOrderHistory() {
