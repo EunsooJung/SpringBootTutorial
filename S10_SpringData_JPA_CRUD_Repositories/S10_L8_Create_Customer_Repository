@@ -10,4 +10,10 @@ Section 10 Spring Data JPA CRUD Repositories
   - es.springframework.repositories.UserRepository.java
 
 2. Setup Repository Services
- 2.1
+ 2.1 Implements Interface:
+  - es.springframework.reposervices.CustomerServiceRepoImpl.java
+  ...... (refer to source code)
+ 2.2 Modify Role.java
+  - Modify @ManyToMany annotation to @ManyToMany(fetch = FetchType.EAGER)
+
+3.

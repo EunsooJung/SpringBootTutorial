@@ -33,16 +33,16 @@ public class CustomerServiceRepoImpl implements CustomerService{
 
     @Override
     public Customer getById(Integer id) {
-        return null;
+        return customerRepository.findOne(id);
     }
 
     @Override
     public Customer saveOrUpdate(Customer domainObject) {
-        return null;
+        return customerRepository.save(domainObject);
     }
 
     @Override
     public void delete(Integer id) {
-
+        customerRepository.delete(id);
     }
 }
