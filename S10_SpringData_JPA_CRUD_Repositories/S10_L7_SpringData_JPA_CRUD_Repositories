@@ -1,0 +1,18 @@
+Section 10
+ Lecture 7: Spring Data JPA CRUD Repositories
+
+
+1. Create new package: ej.springframework.repositories
+ 1.1 Create New Interface: ej.springframework.repositories.ProductRepository.java
+
+2. Modify Spring Configuration
+ 2.1 Add @EnableJpaRepository() annotation to use the Spring JPA Repository
+
+3. Implements CRUD Services
+ 3.1 Create New service package: ej.springframework.services.reposervices
+ 3.2 Create and implements new service class: ej.springframework.services.reposervices.ProductServiceRepoImpl.java
+ 3.3 Add @Service and @Profile annotations on the ProductServiceRepoImpl class
+ 3.4 Add ProductRepository property
+ 3.5 Create setter based DI using the @Autowired annotation
+ 3.6 Implements ProductService methods
+
