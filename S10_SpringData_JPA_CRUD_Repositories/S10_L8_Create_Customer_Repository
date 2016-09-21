@@ -1,0 +1,13 @@
+Section 10 Spring Data JPA CRUD Repositories
+ Lecture 8: Create customer repository
+
+1. Create new Repository Interface for the Customer
+ 1.1 Create new interface:
+  - es.springframework.repositories.CustomerRepository.java
+  - es.springframework.repositories.OrderRepository.java
+  - es.springframework.repositories.ProductRepository.java
+  - es.springframework.repositories.RoleRepository.java
+  - es.springframework.repositories.UserRepository.java
+
+2. Setup Repository Services
+ 2.1
