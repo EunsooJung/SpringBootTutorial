@@ -11,8 +11,10 @@ Section 10
 3. Implements CRUD Services
  3.1 Create New service package: ej.springframework.services.reposervices
  3.2 Create and implements new service class: ej.springframework.services.reposervices.ProductServiceRepoImpl.java
- 3.3 Add @Service and @Profile annotations on the ProductServiceRepoImpl class
+ 3.3 Add @Service and multiple @Profile annotations on the ProductServiceRepoImpl class
  3.4 Add ProductRepository property
  3.5 Create setter based DI using the @Autowired annotation
  3.6 Implements ProductService methods
+ 3.7 Modify ej.springframework.services.jpaservices.ProductServiceJpaDaoImpl.java to apply don't use profile
+ 3.8 Run and connect H2 Database --> Check the PRODUCT Table
 

@@ -16,7 +16,8 @@ import java.util.List;
  * Created by eunsoojung on 9/6/16.
  */
 @Service
-@Profile("jpadao")
+@Profile("jpadao-dontuse")
+//@Profile("jpadao")
 public class ProductServiceJpaDaoImpl implements ProductService {
 
     // Setup Entity Manager Factory
