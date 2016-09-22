@@ -24,6 +24,4 @@ Section 10 Spring Data JPA CRUD Repositories
 5. Refactoring ej.springframework.domain.User.java and ej.springframework.domain.security.Role.java
  5.1 Modify @ManyToMany annotation to @ManyTomay(fetch = FetchType.EAGER) in both of them
 
-6. Re-Run Tomcat Server --> Go to localhost:8080/ --> select user --> Edit User infos
-
-
+6. Re-Run Tomcat Server --> Go to localhost:8080/ --> select user --> Edit User data
