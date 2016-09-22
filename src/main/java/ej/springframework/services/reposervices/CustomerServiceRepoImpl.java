@@ -14,7 +14,7 @@ import java.util.List;
  * Created by eunsoojung on 9/21/16.
  */
 @Service
-@Profile("springdatjpa")
+@Profile("springdatajpa")
 public class CustomerServiceRepoImpl implements CustomerService{
 
     private CustomerRepository customerRepository;
