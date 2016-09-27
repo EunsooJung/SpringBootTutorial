@@ -42,8 +42,9 @@ private String zipCode;
     private User user;
 //    S9-L56
 //    @OneToOne(cascade = {CascadeType.ALL})
-//    private User user;
-
+//    pr
+    //L10
+    @Override
     public Integer getId() {
         return id;
     }

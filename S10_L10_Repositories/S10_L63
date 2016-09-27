@@ -1,0 +1,11 @@
+Section 10
+ Lecture 63: Spring JPA Repositories
+
+1. Create new Directory to define Repository Service Interface: ej.springframework.repositories
+  1.1 Create and implements new interfaces to use the repositories
+
+2. Create new Directory to implements Repository Services Interfaces mehtods
+    2.1 Implements each methods(includes properties and Injecting Dependencies)
+
+
+2. Add @EnableJpaRepositories("ej.springframework.repositories") annotation on the CommonBeanConfig Class

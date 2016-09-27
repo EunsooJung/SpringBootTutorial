@@ -44,7 +44,6 @@ public class SpringJPABootstrap implements ApplicationListener<ContextRefreshedE
     }
 
     /*
-
 @Autowired
 public void setCustomerService(CustomerService customerService) {
 this.customerService = customerService;
@@ -66,8 +65,8 @@ this.customerService = customerService;
         List<Role> roles = (List<Role>) roleService.listAll();
         List<User> users = (List<User>) userService.listAll();
 
-        roles.forEach(role -> {
-            if (role.getRole().equalsIgnoreCase("CUSTOMER")) {
+        roles.forEach(role ->{
+            if(role.getRole().equalsIgnoreCase("CUSTOMER")){
                 users.forEach(user -> {
                     user.addRole(role);
                     userService.saveOrUpdate(user);

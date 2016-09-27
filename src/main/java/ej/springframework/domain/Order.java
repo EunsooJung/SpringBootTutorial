@@ -9,8 +9,10 @@ import java.util.List;
 
 /**
  * Created by eunsoojung on 9/9/16.
+ * // L10-Add @Table() annotation
  */
 @Entity
+@Table(name = "ORDER_HEADER")
 public class Order extends AbstractDomainClass {
 
     @OneToOne

@@ -1,7 +1,8 @@
 package ej.springframework.services.jpaservices;
 
+import ej.springframework.commands.CustomerForm;
+import ej.springframework.converters.CustomerFormToCustomer;
 import ej.springframework.domain.Customer;
-import ej.springframework.domain.User;
 import ej.springframework.services.CustomerService;
 import ej.springframework.services.security.EncryptionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,21 +21,18 @@ import java.util.List;
 @Profile("jpadao")
 public class CustomerServiceJpaDaoImpl extends AbstractJpaDaoService implements CustomerService {
 
-    // private EntityManagerFactory emf;
-
-    // Applying Encryption Service
     private EncryptionService encryptionService;
+    private CustomerFormToCustomer customerFormToCustomer;
 
     @Autowired
     public void setEncryptionService(EncryptionService encryptionService) {
         this.encryptionService = encryptionService;
     }
-/*
-@PersistenceUnit
-public void setEmf(EntityManagerFactory emf) {
-this.emf = emf;
-}
-*/
+
+    @Autowired
+    public void setCustomerFormToCustomer(CustomerFormToCustomer customerFormToCustomer) {
+        this.customerFormToCustomer = customerFormToCustomer;
+    }
 
     @Override
     public List<Customer> listAll() {
@@ -43,10 +41,10 @@ this.emf = emf;
         return em.createQuery("from Customer", Customer.class).getResultList();
     }
 
-
     @Override
     public Customer getById(Integer id) {
         EntityManager em = emf.createEntityManager();
+
         return em.find(Customer.class, id);
     }
 
@@ -67,23 +65,27 @@ this.emf = emf;
         return savedCustomer;
     }
 
-//    @Override
-//    public Customer saveOrUpdate(Customer domainObject) {
-//        EntityManager em = emf.createEntityManager();
-//        em.getTransaction().begin();
-//        Customer savedCustomer = em.merge(domainObject);
-//        em.getTransaction().commit();
-//        return savedCustomer;
-//    }
+    @Override
+    public Customer saveOrUpdateCustomerForm(CustomerForm customerForm) {
+        Customer newCustomer = customerFormToCustomer.convert(customerForm);
+
+        //enhance if saved
+        if(newCustomer.getUser().getId() != null){
+            Customer existingCustomer = getById(newCustomer.getUser().getId());
+
+            //set enabled flag from db
+            newCustomer.getUser().setEnabled(existingCustomer.getUser().getEnabled());
+        }
+
+        return saveOrUpdate(newCustomer);
+    }
 
     @Override
     public void delete(Integer id) {
-
         EntityManager em = emf.createEntityManager();
 
         em.getTransaction().begin();
         em.remove(em.find(Customer.class, id));
         em.getTransaction().commit();
-
     }
 }

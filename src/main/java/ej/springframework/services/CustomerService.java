@@ -1,5 +1,6 @@
 package ej.springframework.services;
 
+import ej.springframework.commands.CustomerForm;
 import ej.springframework.domain.Customer;
 
 /**
@@ -7,5 +8,6 @@ import ej.springframework.domain.Customer;
  */
 
 public interface CustomerService extends CRUDService<Customer> {
-
+    // L11
+    Customer saveOrUpdateCustomerForm(CustomerForm customerForm);
 }

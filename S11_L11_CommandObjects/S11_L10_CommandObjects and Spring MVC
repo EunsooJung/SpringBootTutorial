@@ -1,0 +1,44 @@
+Section 10
+ Lecture 10: Command objects and Spring MVC
+
+1. Create new package for command objects: ej.springframework.commands
+ 1.1 Create and implements new class to use the command objects
+
+2. Refactoring CustomerController: ej.springframework.controller
+ 2.1 Refactoring edit(..) method
+
+3. Create New package to define converter: ej.springframework.converters
+ 3.1 Create and implements new class to use the converter
+
+4. Refactoring Customer.java: ej.springframework.Customer.java
+ 4.1 Refactoring getId() method
+
+5. Refactoring ej.springframework.Order.java
+ 5.1 Add @Table(..) annotation on the Order class
+
+5. Refactoring Services to use command object for Customer form
+ 5.1 Refactoring ej.springframework.services.CustomerService.java
+  5.1.1 Define a Customer property
+ 5.2 Refactoring ej.springframework.services.mapservices.CustomerServiceImpl.java
+  5.2.1 Add CustomerFormToCustomer property
+  5.2.2 Create CustomerFormToCustomer setter method and add @Autowired annotation
+  5.2.3 Implements saveOrUpdateCustomerForm(..) method for the CustomerService.java
+ 5.3 Refactoring ej.springframework.services.japservices.CustomerServiceJpaDaoImple.java
+  5.3.1 Add CustomerFormToCustomer property
+  5.3.2 Create CustomerFormToCustomer setter method and add @Autowired annotation
+  5.3.3 Implements saveOrUpdateCustomerForm(..) method for the CustomerService.java
+ 5.4 Refactoring ej.springframework.services.reposervices.CustomerServiceRepoImpl.java
+  5.4.1
+
+6. Refactoring Front-End source code
+    6.1 Refactoring src/main/java/resources/customerform.html (Refer to source code)
+    6.2 Refactoring src/main/java/resources/show.html (Refer to source code)
+
+7. Refactoring application.properties
+ 7.1 Refactoring Spring profile: spring.profiles.active=springdatajpa
+
+8. Refactoring ej.springframework.domain.User.java
+ 8.1 Refactoring from @ManyToMany annotation to @ManyToMany(fetch = FetchType.EAGER)
+
+9.8. Refactoring ej.springframework.domain.security.Role.java
+   8.1 Refactoring from @ManyToMany annotation to @ManyToMany(fetch = FetchType.EAGER)
