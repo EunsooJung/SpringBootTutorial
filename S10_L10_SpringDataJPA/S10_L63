@@ -1,5 +1,5 @@
 Section 10
- Lecture 63: Spring JPA Repositories
+ Lecture 63: Spring Data JPA Repositories
 
 1. Create new Directory to define Repository Service Interface: ej.springframework.repositories
   1.1 Create and implements new interfaces to use the repositories

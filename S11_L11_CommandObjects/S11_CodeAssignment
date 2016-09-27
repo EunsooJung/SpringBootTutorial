@@ -1,0 +1,37 @@
+Section 11: Command Object
+ Code Assignment for Product
+
+1. Create New Command Object for the Product
+    1.1 Create new ProductForm.java: ej.springframework.commands.ProductForm.java and then implements.
+    1.2
+
+2. Create New Converter class for the Product: esj.springframework.converters
+    2.1 Create and implements New ProductFormToProduct.java:
+       - ej.springframework.converters.ProductFormToProduct.java
+    2.2 Create and implements New ProductToProductForm.java:
+       - ej.springframework.converters.ProductToProductForm.java
+
+3. Refactoring Product Controller class: ej.springframework.controllers.ProductController.java
+ 3.1 Create new ProductToProductForm property
+ 3.2 Inject Dependency for the ProductToProductForm
+ 3.3 Refactoring edit(..) method
+ 3.4 Refactoring newProduct(..) method
+ 3.4 Refactoring saveOrUpdateProduct(..) method
+
+4. Refactoring Services to use command object for Product form
+
+ 4.1 Refactoring ej.springframework.services.ProductService.java
+  4.1.1 Define a Product property
+
+ 4.2 Refactoring ej.springframework.services.mapservices.ProductServiceImpl.java
+  4.2.1 Add ProductFormToProduct property
+  4.2.2 Create ProductFormToProduct setter method and add @Autowired annotation
+  4.2.3 Implements saveOrUpdateProductForm(..) method for the ProductService.java
+
+ 4.3 Refactoring ej.springframework.services.japservices.CustomerServiceJpaDaoImple.java
+  5.3.1 Add CustomerFormToCustomer property
+  5.3.2 Create CustomerFormToCustomer setter method and add @Autowired annotation
+  5.3.3 Implements saveOrUpdateCustomerForm(..) method for the CustomerService.java
+
+ 4.4 Refactoring ej.springframework.services.reposervices.CustomerServiceRepoImpl.java
+  4.4.1 Implements Customer saveOrUpdateCustomerForm(..) method

@@ -1,10 +1,14 @@
 package ej.springframework.services.jpaservices;
 
+import ej.springframework.commands.ProductForm;
+import ej.springframework.converters.ProductFormToProduct;
 import ej.springframework.domain.Customer;
 import ej.springframework.domain.Product;
 import ej.springframework.domain.User;
 import ej.springframework.services.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
@@ -17,15 +21,24 @@ import java.util.List;
  */
 @Service
 @Profile("jpadao")
-public class ProductServiceJpaDaoImpl implements ProductService {
-
+public class ProductServiceJpaDaoImpl extends AbstractJpaDaoService implements ProductService {
+//public class ProductServiceJpaDaoImpl implements ProductService {
+    /*
     // Setup Entity Manager Factory
-    private EntityManagerFactory emf;
+    //private EntityManagerFactory emf;
 
     // Create Setter for the entity manager factory
     @PersistenceUnit
     public void setEmf(EntityManagerFactory emf) {
         this.emf = emf;
+    }
+    */
+    // S11 Object Command Code assignment
+    private ProductFormToProduct productFormToProduct;
+
+    @Autowired
+    public void setProductFormToProduct(ProductFormToProduct productFormToProduct) {
+        this.productFormToProduct = productFormToProduct;
     }
 
     @Override
@@ -51,6 +64,12 @@ public class ProductServiceJpaDaoImpl implements ProductService {
         em.getTransaction().commit();
 
         return savedProduct;
+    }
+
+    // // S11 Object Command Code assignment
+    @Override
+    public Product saveOrUpdateProductForm(ProductForm productForm) {
+        return saveOrUpdate(productFormToProduct.convert(productForm));
     }
 
     @Override

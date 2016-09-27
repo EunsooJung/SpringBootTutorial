@@ -1,5 +1,7 @@
 package ej.springframework.services.reposervices;
 
+import ej.springframework.commands.ProductForm;
+import ej.springframework.converters.ProductFormToProduct;
 import ej.springframework.domain.Product;
 import ej.springframework.repositories.ProductRepository;
 import ej.springframework.services.ProductService;
@@ -18,10 +20,16 @@ import java.util.List;
 public class ProductServiceRepoImpl implements ProductService {
 
     private ProductRepository productRepository;
+    private ProductFormToProduct productFormToProduct;
 
     @Autowired
     public void setProductRepository(ProductRepository productRepository) {
         this.productRepository = productRepository;
+    }
+
+    @Autowired
+    public void setProductFormToProduct(ProductFormToProduct productFormToProduct) {
+        this.productFormToProduct = productFormToProduct;
     }
 
     @Override
@@ -44,5 +52,10 @@ public class ProductServiceRepoImpl implements ProductService {
     @Override
     public void delete(Integer id) {
         productRepository.delete(id);
+    }
+
+    @Override
+    public Product saveOrUpdateProductForm(ProductForm productForm) {
+        return saveOrUpdate(productFormToProduct.convert(productForm));
     }
 }

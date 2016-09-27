@@ -28,7 +28,7 @@ Section 10
   5.3.2 Create CustomerFormToCustomer setter method and add @Autowired annotation
   5.3.3 Implements saveOrUpdateCustomerForm(..) method for the CustomerService.java
  5.4 Refactoring ej.springframework.services.reposervices.CustomerServiceRepoImpl.java
-  5.4.1
+  5.4.1 Implements Customer saveOrUpdateCustomerForm(..) method
 
 6. Refactoring Front-End source code
     6.1 Refactoring src/main/java/resources/customerform.html (Refer to source code)
