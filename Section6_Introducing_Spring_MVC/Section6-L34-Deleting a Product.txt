@@ -1,9 +1,0 @@
-Section 6
- Lecture 34: Deleting a new Product
-  - Key Concepts: Spring MVC and ThymeLeaf as the templates engine
-
-  1. Create new delete() method into the ProductController.java
-  2. Add and define delete() method into the ProductService interface
-  3. Add and implements ProductService interface's delete() method into the ProductServiceImpl.java
-  4. Add <th> and <td> tag to delete product function into the products.html
-  5. Run and Test
