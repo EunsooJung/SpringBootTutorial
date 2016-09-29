@@ -1,7 +1,8 @@
-package ej.springframework.services;
+package ej.springframework.services.jpaservices;
 
 import ej.springframework.config.JpaIntegrationConfig;
 import ej.springframework.domain.Product;
+import ej.springframework.services.ProductService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

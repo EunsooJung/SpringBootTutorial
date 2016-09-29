@@ -35,3 +35,6 @@ Section 11: Command Object
 
  4.4 Refactoring ej.springframework.services.reposervices.CustomerServiceRepoImpl.java
   4.4.1 Implements Customer saveOrUpdateCustomerForm(..) method
+
+5. Refactoring Front End Source code
+    5.1 Refactoring productform.html: src/main/resources/templates/productform.html
