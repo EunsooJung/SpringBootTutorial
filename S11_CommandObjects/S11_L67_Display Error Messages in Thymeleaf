@@ -1,0 +1,11 @@
+Section 11: Command Objects and Spring MVC
+    Lecture 67: Display Error Messages in Thymeleaf
+
+1. Refactoring userName field: resources/templates/customerform.html
+    1.1 Add th:errorclass and th:each in the input tag and
+    1.2 Add field error check statement
+
+2. Refactoring email field: resources/templates/customerform.html
+    2.1 Add th:errorclass and th:each in the input tag and
+    2.2 Add field error check statement
+
