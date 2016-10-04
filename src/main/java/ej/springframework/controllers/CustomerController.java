@@ -65,12 +65,14 @@ public class CustomerController {
         return "customer/customerform";
     }
 
+    // Lecture 65
     @RequestMapping("/new")
     public String newCustomer(Model model){
         model.addAttribute("customerForm", new CustomerForm());
         return "customer/customerform";
     }
 
+    // Lecture 65
     @RequestMapping(method = RequestMethod.POST)
     public String saveOrUpdate(@Valid CustomerForm customerForm, BindingResult bindingResult){
 

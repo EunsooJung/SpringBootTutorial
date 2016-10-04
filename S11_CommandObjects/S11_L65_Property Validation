@@ -1,0 +1,16 @@
+Section 11: Command Objects and Spring MVC
+    Lecture 65: Property Validation
+
+1. Refactoring ej.springframework.commands.CustomerForm.java
+    1.1 Add @NotEmpty annotation on the userName field
+
+2. Refactoring es.springframework.controllers.CustomerController.java
+    2.1 Refactoring saveOrUpdate(..) method
+    2.2 Refactoring newCustomer(..) method
+
+3. Refactoring resources/templates/customerform.html
+    3.1 Refactoring th:object in the form tag
+    3.2 Add if() statement to check the field error
+
+4. Run and Test
+  4.1 New Customer function test

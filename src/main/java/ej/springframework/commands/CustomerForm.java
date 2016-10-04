@@ -15,6 +15,7 @@ public class CustomerForm {
     private Integer customerId;
     private Integer customerVersion;
 
+    // Lecture 65
     @NotEmpty
     @Size(min = 2, max = 75)
     private String userName;
