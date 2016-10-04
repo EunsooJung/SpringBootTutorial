@@ -1,9 +1,0 @@
-Section 6
- Lecture 31: Display a Products
- - Key Concepts: Spring MVC and ThymeLeaf as the templates engine
-
- 1. Define and implements getProduct() method in the ProductController.java
- 2. Add getProductById() method in the ProductService.java
- 3. Add getProductById() implements method in the ProductServiceImpl.java
- 4. Add and implements View contents in the products.html
-

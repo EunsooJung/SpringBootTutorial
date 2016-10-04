@@ -1,7 +1,0 @@
-Section 6
- Lecture 27: Creating new SpringMVC project
-
- 1. New project --> Spring -> initializer --> input project name ... --> select Web and Thymeleaf --> next
-    (Notice: Whe we create new spring project using spring initializer, Don't use springboot 1.4.0 version because
-    that version is unstable vesion in my experience. use the 1.3.7 version)
- 2. Project Workspace setup --> Finish
