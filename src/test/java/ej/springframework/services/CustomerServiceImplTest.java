@@ -33,7 +33,7 @@ public class CustomerServiceImplTest {
 
         List<Customer> customers = (List<Customer>) customerService.listAll();
 
-        assert customers.size() == 2;
+        assert customers.size() == 3;
 
     }
 

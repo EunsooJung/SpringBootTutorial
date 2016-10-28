@@ -1,5 +1,7 @@
 package ej.springframework.controllers;
 
+import ej.springframework.commands.ProductForm;
+import ej.springframework.converters.ProductToProductForm;
 import ej.springframework.domain.Product;
 import ej.springframework.services.ProductService;
 import org.junit.Before;
@@ -38,6 +40,9 @@ public class ProductControllerTest {
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this); // initializes controller and mocks
+
+        // Refactoring - Command Objects
+        productController.setProductToProductForm(new ProductToProductForm());
         mockMvc = MockMvcBuilders.standaloneSetup(productController).build();
     }
 
@@ -79,7 +84,7 @@ public class ProductControllerTest {
         mockMvc.perform(get("/product/edit/1"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("product/productform"))
-                .andExpect(model().attribute("product", instanceOf(Product.class)));
+                .andExpect(model().attribute("productForm", instanceOf(ProductForm.class)));
     }
 
     @Test
@@ -92,7 +97,7 @@ public class ProductControllerTest {
         mockMvc.perform(get("/product/new"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("product/productform"))
-                .andExpect(model().attribute("product", instanceOf(Product.class)));
+                .andExpect(model().attribute("productForm", instanceOf(ProductForm.class)));
 
     }
 
@@ -101,8 +106,8 @@ public class ProductControllerTest {
 
         Integer id = 1;
         String description = "Test Description";
-        BigDecimal price = new BigDecimal("77.00");
-        String imageUrl = "example.com";
+        BigDecimal price = new BigDecimal("12.00");
+        String imageUrl = "http://example.com";
 
         Product returnProduct = new Product();
         returnProduct.setId(id);
@@ -110,24 +115,32 @@ public class ProductControllerTest {
         returnProduct.setPrice(price);
         returnProduct.setImageUrl(imageUrl);
 
-        when(productService.saveOrUpdate(Matchers.<Product>any())).thenReturn(returnProduct);
+        // when(productService.saveOrUpdate(Matchers.<Product>any())).thenReturn(returnProduct);
+        // Refactoring
+        when(productService.saveOrUpdateProductForm(Matchers.<ProductForm>any())).thenReturn(returnProduct);
 
         mockMvc.perform(post("/product")
                 .param("id", "1")
                 .param("description", description)
-                .param("price", "77.00")
-                .param("imageUrl", "example.com"))
+                .param("price", "12.00")
+                .param("imageUrl", "http://example.com"))
                 .andExpect(status().is3xxRedirection())
-                .andExpect(view().name("redirect:/product/show/1"))
+                .andExpect(view().name("redirect:/product/show/1"));
+                /*
                 .andExpect(model().attribute("product", instanceOf(Product.class)))
                 .andExpect(model().attribute("product", hasProperty("id", is(id))))
                 .andExpect(model().attribute("product", hasProperty("description", is(description))))
                 .andExpect(model().attribute("product", hasProperty("price", is(price))))
                 .andExpect(model().attribute("product", hasProperty("imageUrl", is(imageUrl))));
+                */
 
-        // verify properties of bound object
-        ArgumentCaptor<Product> boundProduct = ArgumentCaptor.forClass(Product.class);
-        verify(productService).saveOrUpdate(boundProduct.capture());
+                /* verify properties of bound object
+ArgumentCaptor<Product> boundProduct = ArgumentCaptor.forClass(Product.class);
+verify(productService).saveOrUpdate(boundProduct.capture());
+*/
+        //verify properties of bound object
+        ArgumentCaptor<ProductForm> boundProduct = ArgumentCaptor.forClass(ProductForm.class);
+        verify(productService).saveOrUpdateProductForm(boundProduct.capture());
 
         assertEquals(id, boundProduct.getValue().getId());
         assertEquals(description, boundProduct.getValue().getDescription());

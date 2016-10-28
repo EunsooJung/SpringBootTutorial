@@ -18,7 +18,7 @@
     <h2>Customer Details</h2>
     <div>
         <form class="form-horizontal" th:object="${customerForm}" th:action="@{/customer}" method="post">
-
+            <!-- Thymeleaf Error messages -->
             <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
                 <p th:text="#{form.hasErrors}">Error Message</p>
             </div>

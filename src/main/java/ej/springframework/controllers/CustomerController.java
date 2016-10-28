@@ -60,7 +60,7 @@ public class CustomerController {
     public String edit(@PathVariable Integer id, Model model){
 
         Customer customer = customerService.getById(id);
-
+        // Refactoring - added converter
         model.addAttribute("customerForm", customerToCustomerForm.convert(customer));
         return "customer/customerform";
     }
