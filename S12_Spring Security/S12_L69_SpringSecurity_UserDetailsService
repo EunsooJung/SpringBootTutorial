@@ -1,5 +1,5 @@
 Section12: Spring Security
-    Lecture 69: Spring Security - User Details Service
+    Lecture 69: User Details Service
 
 1. Define UserDetailsService
  1.1 Create SpringSecUserDetailsServiceImpl.java: ej.springframework.services.security
