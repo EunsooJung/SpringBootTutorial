@@ -1,0 +1,30 @@
+Section12: Spring Security
+    Lecture 69: Spring Security - User Details Service
+
+1. Define UserDetailsService
+ 1.1 Create SpringSecUserDetailsServiceImpl.java: ej.springframework.services.security
+ 1.2 Add "findByUserName(String userName)" method: ej.springframework.services.
+ 1.2 Create UserToUserDetails.java: ej.springframework.converters.
+ 1.3 Create new UserDetailsImpl.java: ej.springframework.services.security
+
+2. ej.springframework.services.mapservices.UserServiceMapImpl.java
+ 2.1 Override findByUserName(String userName) method
+
+3. ej.springframework.services.jpaservices.UserServiceJpaDaoImpl.java
+ 3.1 2.1 Override findByUserName(String userName) method
+
+4. Spring Data JPA
+ 4.1 Override findByUserName(String userName) method
+    - ej.springframework.services.reposervices.UserServiceRepoImpl.java
+
+5. repositories
+ 5.1 Add findByUsername(String username() method
+    - ej.springframework.repositories.UserRepository.java (interface)
+
+6. Spring Component
+ 6.1 Add Spring Component for User Details Service
+    - ej.springframework.converters.UserToUserDetails.java
+
+7. Spring Security: Implements UserDetails Interface
+ 7.1 Create New UserDetailsImpl.java class (relate with UserToUserDetails.java - Lecture 6.1)
+ 7.2 Declare setter method and override method (refer to source code)

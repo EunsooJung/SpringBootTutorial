@@ -8,4 +8,7 @@ import ej.springframework.domain.User;
 public interface UserService extends CRUDService<User> {
 
     // User saveOrUpdate(User domainObject);
+
+    // S12_L69: User Details Service
+    User findByUserName(String userName);
 }

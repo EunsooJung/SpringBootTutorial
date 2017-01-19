@@ -56,4 +56,9 @@ public class UserServiceRepoImpl implements UserService {
         customerRepository.delete(user.getCustomer());
         userRepository.delete(user);
     }
+    // S12_L69
+    @Override
+    public User findByUserName(String userName) {
+        return userRepository.findByUsername(userName);
+    }
 }

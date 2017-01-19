@@ -1,0 +1,43 @@
+Section12: Spring Security
+    Lecture 68: Spring Security Maven Dependency
+
+1. Spring Boot Security dependency into the pom.xml
+    <dependency>
+    	<groupId>org.springframework.boot</groupId>
+    	<artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+
+2. Spring boot Security initial configuration
+    2.1 Start Spring boot Server
+    2.2 Check the Log In pop up
+    2.3 Create new configuration Java for the Security
+      - ej.springframework.config.SpringSecConfig.java
+    2.4 Add @Configuration annotation on the SpringSecConfig Class
+    2.5 Extends WebSecurityConfigurerAdapter for the SpringSecConfig Class
+        2.5.1 Override configure http security (using command + N key --> Override method)
+        2.5.2 Add http.authorizeRequests...
+
+3. Authentication vs Authorization
+    - Authentication: Credential with User (Who I am ?)
+    - Authorization: It allows specific web page access and use something.
+
+4. Spring Security Password Encoder
+    4.1 Add Encryption Library into the pom.xml
+        <dependency>
+            <groupId>org.jasypt</groupId>
+            <artifactId>jasypt</artifactId>
+            <version>1.9.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jasypt</groupId>
+            <artifactId>jasypt-springsecurity3</artifactId>
+            <version>1.9.2</version>
+        </dependency>
+    4.2 Define new Beans in SpringSecConfig.java
+
+5. Define UserDetailsService
+ 5.1 Create SpringSecUserDetailsServiceImpl.java: ej.springframework.services.security
+ 5.2 Add "findByUserName(String userName)" method: ej.springframework.services.
+ 5.2 Create UserToUserDetails.java: ej.springframework.converters.
+ 5.3 Create new UserDetailsImpl.java: ej.springframework.services.security
