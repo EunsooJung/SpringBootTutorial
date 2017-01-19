@@ -1,0 +1,10 @@
+Section12: Spring Security
+    Lecture 72: Login Form for Spring Security
+
+1. Spring Url Mapping (@RequestMapping)
+  1.1 Add loginFrom() and notAuth() url request mapping method
+     - ej.springframework.controller.IndexController.java
+
+
+2. Create New login.html
+  - resources/templates/login.html

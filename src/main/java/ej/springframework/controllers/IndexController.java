@@ -14,4 +14,15 @@ public class IndexController {
         return "index";
     }
 
+    // S12_L72 Login Form for Spring Security
+    @RequestMapping("/access_denied")
+    public String notAuth() {
+        return "access_denied";
+    }
+
+    @RequestMapping("login")
+    public String loginForm() {
+        return "login";
+    }
+
 }

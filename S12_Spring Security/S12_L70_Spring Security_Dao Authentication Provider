@@ -1,0 +1,8 @@
+Section12: Spring Security
+    Lecture 70: Dao Authentication Provider
+
+1. Spring Security Configuration for Dao Authentication Provider
+ 1.1 Add @Bean annotation and implements DaoAuthenticationProvider() Method
+    - ej.springframework.config.SpringSecConfig.java
+ 1.2 Add configureAutoManager(...) and autowiring
+

@@ -1,0 +1,6 @@
+Section12: Spring Security
+    Lecture 71: Securing URLs with Spring Security
+
+1. Spring Security Configuration
+ 1.1 Refactoring configure() method for Spring URLs
+    - ej.springframework.config.SpringSecConfig.java
