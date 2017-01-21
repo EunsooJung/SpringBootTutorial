@@ -1,3 +1,50 @@
 Section 12: Spring AOP (Aspect Oriented Programming)
     Lecture 74: AOP Terminology in Spring
 
+1. What is AOP ?
+ : AOP (Aspect Oriented Programming)
+   - Allows developers to add behavior to code, without modifying existing code.
+
+2. AOP Terminology
+ 2.1 Aspect
+    : "A modularization of a concern that cuts across multiple classes"
+      - i.e., A module - A logging module
+ 2.2 Join Point
+    : A point of execution in the program to connect the Aspect.
+      - In Spring this is always a method
+ 2.3 Advice
+    : Action taken by aspect at join point.
+      - What the Aspect does
+ 2.4 Pointcut
+    : One or more join points where advice should be executed
+      ( collection of methods )
+ 2.5 Introduction
+    : Allows you to be declare new properties / methods on a target object
+      - Kind of like meta-programming in Groovy
+ 2.6 Target Object
+    : the object being advised by on or more aspects.
+ 2.7 AOP Proxy
+    : The proxy object created by the AOP framework.
+      - Wraps the target object.
+ 2.8 Weaving
+    : "Weaving is the process of Linking aspects with other application types
+       or objects to create an advised object. This can be
+       done at compile time, load time, or at runtime."
+
+3. Types of Advice
+ 3.1 Before: Before method execution.
+ 3.2 After : After method execution.
+ 3.3 After-returning: Run advice after method execution,
+                      only if method completes successfully.
+ 3.4 After-throwing: Advice to run upon an exception.
+ 3.5 Around: Run Advice before and after a method is invoked.
+
+4. AOP Implementation in Spring
+ 4.1 XML Schema Based - Configuration is done in a Spring XML
+                        XML Configuration file.
+ 4.2 @AspectJ Based - Using AspectJ annotations.
+
+5. AOP in Spring Boot
+  5.1 By default AOP Auto-configuration is enabled in Spring Boot
+     - This is the same as using a Spring Java configuration class to
+       enabled AspectJ Auto Proxy.
