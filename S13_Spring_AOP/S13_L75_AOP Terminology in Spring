@@ -48,3 +48,5 @@ Section 12: Spring AOP (Aspect Oriented Programming)
   5.1 By default AOP Auto-configuration is enabled in Spring Boot
      - This is the same as using a Spring Java configuration class to
        enabled AspectJ Auto Proxy.
+
+**
