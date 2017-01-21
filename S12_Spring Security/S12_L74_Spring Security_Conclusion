@@ -1,0 +1,9 @@
+Section 12: Spring Security
+    Lecture 74: Summary of Spring Security
+
+1. Spring Security Setup
+2. Authentication of H2 Database
+  - Setup Dao Authentication Provider
+  - Password incoder
+  - Authentication Roles
+  - Authorization difference URLs for the Web Application
