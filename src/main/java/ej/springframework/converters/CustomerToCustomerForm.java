@@ -27,5 +27,4 @@ public class CustomerToCustomerForm implements Converter<Customer, CustomerForm>
 
         return customerForm;
     }
-
 }

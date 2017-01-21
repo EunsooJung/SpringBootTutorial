@@ -2,6 +2,8 @@ package ej.springframework.services.mapservices;
 
 import ej.springframework.domain.*;
 import ej.springframework.services.UserService;
+import ej.springframework.services.security.EncryptionService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,13 @@ import java.util.function.Predicate;
 @Service
 @Profile("map")
 public class UserServiceMapImpl extends AbstractMapService implements UserService {
+
+    private EncryptionService encryptionService;
+
+    @Autowired
+    public void setEncryptionService(EncryptionService encryptionService) {
+        this.encryptionService = encryptionService;
+    }
 
     @Override
     public List<DomainObject> listAll() {

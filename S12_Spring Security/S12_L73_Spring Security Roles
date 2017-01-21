@@ -1,0 +1,25 @@
+Section 12: Spring Security
+    Lecture 73: Spring Security Roles
+
+1. Add Roles
+ 1.1 SpringJPABootstrap.java
+    - ej.springframework.bootstrap.SpringJPABootstrap.java
+    - Add Role in the loadRoles()
+ 1.2 Start Spring Boot Server
+ 1.3 Connect H2 DB Server
+    - http://localhost:8080/h2-console
+    - login and check the testdb tables
+      ( ** Note: If you have a login trouble with h2 db, after login so You have to add below two line in
+       the ej.springframework.config.SpringSecConfig.java
+
+       http.csrf().disable();
+       http.headers().frameOptions().disable();
+       )
+    - check USER_ROLE table that added to role 2
+
+2. Spring Configuration:
+  - ej.springframework.config.SpringSecConfig.java
+ 2.1 Add .hasRole("ADMIN")
+ 2.2 Rebuild project
+ 2.3 Start Server
+ 2.4 Login fglenanne / password --> User menu
