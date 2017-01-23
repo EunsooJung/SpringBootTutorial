@@ -1,5 +1,5 @@
-Section 12: Spring AOP (Aspect Oriented Programming)
-    Lecture 75: Spring AOP Example
+Section 13: Spring AOP (Aspect Oriented Programming)
+    Lecture 75: Spring AOP Example: Login
 
 1. Create LoginAspect.java
   - ej.framework.services.security.LoginAspect.java

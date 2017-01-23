@@ -1,0 +1,18 @@
+Section 14: Spring Application Events
+    Lecture 77: Locking User Accounts
+
+1. Declare and Implements User locking stuffs for hibernate and DB
+  - ej.springframework.domain.User.java
+ 1.1 Add private Integer failedLoginAttempts = 0;
+ 1.2 Implements getter and setter method for failedLoginAttempts type
+
+2. Autowiring UserService in the LoginFailureHandler class
+  - ej.springframework.services.security.LoginFailureEventHandler.java
+ 2.1 Declare UserService constructor in the LoginFailureHandler class
+ 2.2 Implements UserService setter method
+ 2.3 Add @Autowired annotation above implemented the UserService setter method
+
+3. Create new updateUserAccount(..) method
+  - ej.springframework.services.security.LoginFailureEventHandler.java
+ 3.1 Declare updateUserAccount(..) method call statement into the onApplicationEvent(...) method
+ 3.2 Create and implements new updateUserAccount(..) method

@@ -1,0 +1,35 @@
+Section 14: Spring Application Events
+    Lecture 76: Publish and Consume Spring Custom Events: Login Failure event
+
+1. Create New LoginFailureEvent.java file
+  - ej.springframework.services.security.LoginFailureEvent.java
+  - This class extends Application Event
+
+2. Create New LoginFailureEventPublisher.java
+  - ej.springframework.services.security.LoginFailureEventPublisher.java
+  - This class implements ApplicationEventPublisherAware class
+  - Add @Component annotation above the LoginFailureEventPublisher class
+
+3. Create New LoginFailureEventHandler.java
+  - ej.springframework.services.security.LoginFailureEventHandler.java
+  - This class implements ApplicationListener<LoginFailureEvent> class
+  - Add @Component annotation above the LoginFailureEventHandler class
+  - Override method onApplicationEvent(..)
+
+4. Autowiring in the LoginAspect.java
+  4.1 Declare LoginFailureEventPublisher constructor ?
+  4.2 Implements setter method
+  4.3 Add @Autowired annotation above the setter method
+  4.4 Implements throw Call LoginFailureEvent Exception
+
+5. Test
+ 5.1 Start SpringmvcApplication Server
+ 5.2 Open the Browser
+ 5.3 Try Login with wrong id and password
+ 5.4 Check the SpringmvcApplication Server console
+    - Result:
+      This is before the Authenticate Method: authentication: false
+      Login failed for user: test
+      LoginEvent Failure for: test
+
+
