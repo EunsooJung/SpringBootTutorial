@@ -1,0 +1,20 @@
+Section 12: Spring AOP (Aspect Oriented Programming)
+    Lecture 75: Spring AOP Example
+
+1. Create LoginAspect.java
+  - ej.framework.services.security.LoginAspect.java
+  1.1 Add @Aspect and @Component notations above the LoginAspect class
+  1.2 Implements methods
+     ...
+  1.3 Start Spring application
+  1.4 Open Web Browser
+  1.5 Try to login with wrong ID and Password
+  1.6 Check server command
+     - result:
+     This is before the Authenticate Method: authentication: false
+     Login failed for user: test
+  1.7 Try to login with correct ID and Password
+  1.8 Check server command
+     - result:
+     This is before the Authenticate Method: authentication: false
+     This is after the Authenticate Method authentication: true
