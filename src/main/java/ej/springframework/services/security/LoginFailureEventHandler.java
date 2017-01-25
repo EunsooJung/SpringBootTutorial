@@ -37,16 +37,22 @@ public class LoginFailureEventHandler implements ApplicationListener<LoginFailur
 
     // S14_L77_3.2
     public void updateUserAccount(Authentication authentication) {
+
         User user = userService.findByUserName((String) authentication.getPrincipal());
 
-        if (user != null)   // user found
+        // S15_L79 Refactoring
+        if (user != null) {         // user found
+
             user.setFailedLoginAttempts(user.getFailedLoginAttempts() + 1);
+            System.out.println("Valid User name, updating failed attempts");
 
             if (user.getFailedLoginAttempts() > 5) {
                 user.setEnabled(false);
+                System.out.println("### LOCKING USER ACCOUNT!");
             }
 
-            System.out.println("Valid User name, updating failed attempts");
+
             userService.saveOrUpdate(user);
+        }
     }
 }
