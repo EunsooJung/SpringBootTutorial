@@ -13,14 +13,22 @@ import org.springframework.stereotype.Component;
 @Component          // Register Spring bean
 public class LoginAspect {
 
-    // S14_L76_4.* start ------->
+    // S14_L76_4.*
     private LoginFailureEventPublisher publisher;
+    // S14_L78_3.*
+    private LoginSuccessEventPublisher successEventPublisher;
 
+    // S14_L76_4.*
     @Autowired
     public void setPublisher(LoginFailureEventPublisher publisher) {
         this.publisher = publisher;
     }
-    // S14_L76_4.* End <---------
+
+    // S14_L78_3.*
+    @Autowired
+    public void setSuccessEventPublisher(LoginSuccessEventPublisher successEventPublisher) {
+        this.successEventPublisher = successEventPublisher;
+    }
 
     @Pointcut("execution(* org.springframework.security.authentication.AuthenticationProvider.authenticate(..))")
     // above  .. <-- two dots is wild card for data type (any data types is ok)
@@ -39,6 +47,8 @@ public class LoginAspect {
     public void logAfterAuthenticate(Authentication authentication) {
         System.out.println("This is after the Authenticate Method authentication: " +
                 authentication.isAuthenticated());
+        // S14_L78_3.*
+        successEventPublisher.publishEvent(new LoginSuccessEvent(authentication));
     }
 
     @AfterThrowing("ej.springframework.services.security.LoginAspect.doAuthenticate() && args(authentication)")

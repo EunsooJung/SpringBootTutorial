@@ -1,0 +1,53 @@
+Section 14: Spring Application Events
+    Lecture 78: Locking User Accounts
+
+1. Create User Login Success Event
+ 1.1 Create new LoginSuccessEvent.java
+    - ej.springframework.services.security.LoginSuccessEvent.java
+    - This class extends from ApplicationEvent class
+
+2. Setup User Login Success publisher
+ 2.1 Create new LoginSuccessEventPublisher.java
+    - ej.springframework.services.security.LoginSuccessPublisher.java
+    - Add @Component annotation to register spring bean above the LoginSuccessPublisher class
+    - This class implements ApplicationEventPublisherAware interface
+    - Declare ApplicationEventPublisher property
+    - Override setApplicationEventPublisher(..) method
+    - Implements publishEvent(..) method
+
+3. Autowiring into the LoginAspect.java
+  - ej.springframework.services.security.LoginAspect.java
+ 3.1 Declare new properties for the UserSuccessEventPublisher
+ 3.2 Implements setter method for the UserSuccessEventPublisher
+ 3.3 Add @Autowired annotation
+
+4. Publish UserSuccessEventPublisher event
+  - ej.springframework.services.security.LoginAspect.java
+ 4.1 Create new Constructor for the UserSuccessEventPublisher into the logAfterAuthenticate(..) method
+
+5. Create new LoginSuccessEventHandler for User
+  - ej.springframework.services.security.LoginSuccessEventHandler.java
+ 5.1 Create new LoginSuccessEventHandler.java (implements ApplicationListener<T> interface)
+ 5.2 Add @Component annotation above the LoginSuccessEventHandler to register spring bean
+ 5.3 Declare UserService property
+ 5.4 Implements setter method for the UserService property
+ 5.5 Override onApplicationEvent
+ 5.6 Implements updateUserAccount(..) method
+
+6. Take a look at the running and action
+ 6.1 Start SpringmvcApplication Server
+ 6.2 Try to login with wrong user and passsword
+ 6.3 Check the console message
+    - Result:
+    This is before the Authenticate Method: authentication: false
+    Login failed for user: mweston
+    LoginEvent Failure for: mweston
+    Valid User name, updating failed attempts
+ 6.4 Check the H2-console
+    - Check FAILEDLOGINATTEMPT count = 1
+ 6.5 Re-try to login with collect user name and password
+    - Check the h2-console
+    - Check FAILEDLOGINATTEMPT count = 0
+ 6.6 Check the Server console message
+    - Result:
+      Good login, resetting failed attempts.
