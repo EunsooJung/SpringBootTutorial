@@ -1,0 +1,30 @@
+Section 15: Task Scheduling in Spring
+    Lecture 79: Scheduled Tasks in Spring
+
+1. Setup Spring scheduling
+ 1.1 Add @EnableScheduling annotation into the CommonBeanConfig.java
+    - ej.springframework.config.CommonBeanConfig.java
+
+2. Implements LoginService Interface
+  - es.springframework.services.security.LoginService.java (interface)
+  2.1 Implements resetFailedLogins() method
+
+3. Create new LoginServiceImpl.java to implements LoginService interface
+  - es.springframework.services.security.LoginServiceImpl.java
+  - This class implements LoginService interface
+ 3.1 Add spring service stereotype
+    - Add @Service annotation above the LoginServiceImpl class
+ 3.2 Inject dependency to use the UserService
+    - Declare UserService property
+    - Implement setter method for UserService property
+    - Add @Autowired annotation to Injecting dependency that above setter method
+ 3.3 Override and implements LoginService interface's method
+    - Add @Scheduled(..) annotation to use the spring schedule
+
+4. Refactoring LoginFailureEventHandler.java
+
+5. Test
+ 5.1 Start SpringmvcApplication Server
+ 5.2 Look at the Server console to check scheduled task
+ 5.3 Open web browser: http://localhost:8080
+ 5.4 Try Login with wrong user id and password ( To test try to about 3 times )
