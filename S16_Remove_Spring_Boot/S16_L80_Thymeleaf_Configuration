@@ -1,0 +1,33 @@
+Section 16: Removing Spring Boot
+    Lecture 80: Thymeleaf Configuration
+
+1. Remove Thymeleaf configuration in Spring boot
+ 1.1 Open External Libraries in IntelliJ
+    - Open Maven: org.springframework.boot.:spring-boot-autoconfigure:1.3.7.RELEASE
+    - Look at the org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration
+
+2. Open src/main/resources/application.properties file
+ 2.1 add "spring.autoconfigure.exclude[0]=org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration"
+     property in the application.properties file
+ 2.2 Test
+    - Start SpringmvcApplication Server
+    - Open Web Browser: http://localhost:8080/ <-- It must be failure and then look at the server console log
+      - Result:
+        Whitelabel Error Page
+
+        This application has no explicit mapping for /error, so you are seeing this as a fallback.
+
+        Thu Jan 26 18:06:54 PST 2017
+        There was an unexpected error (type=Not Found, status=404).
+        No message available
+
+3. Create new spring configuration file for the Thymeleaf
+  - ej.springframework.config.ThymeleafConfig.java
+ 3.1 Implements ThymeleafConfig.java
+    - Add spring context @Configuration annotation above the ThymeleafConfig class
+    - Implements 5 beans about Thymeleaf
+ 3.2 Test
+    - Start Server
+    - Open default web browser
+
+
