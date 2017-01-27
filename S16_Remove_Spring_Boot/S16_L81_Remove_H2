@@ -1,0 +1,17 @@
+Section 16: Removing Spring Boot
+    Lecture 80: Remove H2 DB spring autoconfiguration and the create new JDBC Data source
+
+1. Open src/main/resources/application.properties file
+ 1.1 add "spring.autoconfigure.exclude[1]=org.springframework.boot.autoconfigure.thymeleaf.DataSourceAutoConfiguration"
+     property in the application.properties file
+
+2. Setup the H2 DataSource using JDBC
+ 2.1 Create new H2DataSourceConfig.java
+    - ej.springframework.config.H2DataSourceConfig.java
+ 2.2 Add spring context @Configuration annotation above the H2DataSourceConfig class
+ 2.3 Implements H2DataSourceConfig class
+
+3. Test
+  3.1 Start Server
+  3.2 Open H2-console browser
+  3.3 login and check the testdb data sources (i.e, PRODUCT Table)
