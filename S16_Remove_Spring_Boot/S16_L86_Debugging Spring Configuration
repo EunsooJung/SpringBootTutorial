@@ -1,0 +1,13 @@
+Section 16: Removing Spring Boot
+    Lecture 86: Debugging Spring Configuration
+
+1. Edit Spring boot server configuration
+ 1.1 Go to "SpringmvcApplication" server upper right hand side tab
+ 1.2 Select "Edit Configuration"
+ 1.3 Select SpringBoot --> Your Application server name (SpringmvcApplication)
+     --> Configuration Tab (right hand side) --> Program arguments:
+     --> input "--debug" --> Apply --> Ok
+
+2. Test
+ 2.1 Start Server
+ 2.2 Check the console messages
