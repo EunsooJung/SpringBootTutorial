@@ -1,0 +1,26 @@
+Section 16: Removing Spring Boot
+    Lecture 84: Spring Security Configuration
+
+1. Remove Spring boot security auto configuration
+ 1.1 Add Spring security property to change
+    - src/main/resources/application.properties file
+    - add "spring.autoconfigure.exclude[4]=org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration"
+      property in the application.properties file
+    - add "spring.autoconfigure.exclude[5]=org.springframework.boot.autoconfigure.security.SecurityFilterAutoConfiguration"
+          property in the application.properties file
+    - add "spring.autoconfigure.exclude[6]=org.springframework.boot.autoconfigure.security.FallBackWebSecurityAutoConfiguration"
+          property in the application.properties file
+ 1.2 Enable Spring Security
+    - ej.springframework.config.SpringSecConfig
+    - Add @EnableWebSecurity annotation on the SpringSecConfig class
+
+2. setup core Spring security configuration
+  - ej.springframework.config.SpringSecConfig
+  2.1 Add @EnableWebSecurity annotation on the SpringSecConfig class to activate the Core Spring security
+
+3. Test
+  3.1 Start Server
+  3.2 Open localhost:8080
+  3.3 Check Displayed data (i.e, Product list and Product items ...)
+  3.4 login and check weather still working application and the h2 testdb database (i.e, PRODUCT Table)
+  3.5 Try to general user id and admin id
