@@ -1,0 +1,20 @@
+Section 16: Removing Spring Boot
+    Lecture 85: Spring AOP Configuration
+
+1. Remove Spring boot aop auto configuration
+ 1.1 Add Spring aop property to change
+    - src/main/resources/application.properties file
+    - add "spring.autoconfigure.exclude[7]=org.springframework.boot.autoconfigure.aop.AopAutoConfiguration"
+      property in the application.properties file
+
+2. setup core Spring AOP configuration
+  2.1 Create new AOP Configuration ej.springframework.config.AopConfig.java
+  2.2 Add @Configuration annotation on the AopConfig class
+  2.2 Add @EnableAspectJAutoProxy annotation on the AopConfig class to activate the Core Spring AOP
+
+3. Test
+  3.1 Start Server
+  3.2 Open localhost:8080
+  3.3 Check Displayed data (i.e, Product list and Product items ...)
+  3.4 login using wrong id and check weather still working application
+  3.5 Check the console messages
