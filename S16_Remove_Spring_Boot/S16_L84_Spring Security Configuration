@@ -10,9 +10,6 @@ Section 16: Removing Spring Boot
           property in the application.properties file
     - add "spring.autoconfigure.exclude[6]=org.springframework.boot.autoconfigure.security.FallBackWebSecurityAutoConfiguration"
           property in the application.properties file
- 1.2 Enable Spring Security
-    - ej.springframework.config.SpringSecConfig
-    - Add @EnableWebSecurity annotation on the SpringSecConfig class
 
 2. setup core Spring security configuration
   - ej.springframework.config.SpringSecConfig
