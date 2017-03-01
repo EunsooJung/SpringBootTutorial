@@ -1,0 +1,10 @@
+Section 16: Removing Spring Boot
+    Lecture 87: Spring MVC Configuration
+
+1. Create Spring MVC Configuration class
+ 1.1 es.springframework.config.SpringMVCConfig.java
+ 1.2 Add @Configuration and @EnableWebMvc annotations on the SpringMVCConfig class
+
+2. Debugging
+ 2.1 Start SpringmvcApplication Server
+ 2.2 Check the console "SpringDataWebAutoConfiguration matched" and "Jackson" stuffs
