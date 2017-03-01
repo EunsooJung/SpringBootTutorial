@@ -1,0 +1,25 @@
+Section 16: Removing Spring Boot
+    Lecture 89: Removing Spring Boot Maven Dependencies
+
+1. SpringmvcApplication Configuration
+ 1.1 Open SpringmvcApplication --> "Edit Configuration" (above right side)
+ 1.2 Go to Configuration tab --> Remove Program arguments: --debug option
+ 1.3 Spring Boot Settings --> Check "Enable debug output"
+ 1.4 Apply --> OK
+
+2. Run SpringmvcApplication Server
+ 2.1 Check Console messages
+
+3. Open Maven POM
+ 3.1 Remove Spring Boot devtools maven dependency
+ 3.2 Remove spring-boot-starter-parent maven dependency
+ 3.3 Add <spring.version>4.2.3.RELEASE</spring.version> in the Properties
+ 3.4 Remove Spring Boot thymeleaf and Add thymeleaf layout maven dependency
+ 3.5 Add thymeleaf spring4 dependency
+ 3.6 Remove spring-boot-starter-web maven dependency
+ 3.7 Add spring-webmvc maven dependency
+ 3.8 Add spring-web maven dependency
+ 3.9 Add jackson-databind maven dependency
+ 4.0 Remove Spring Boot jpa maven dependency
+ 4.1 Add hibernate-validator maven dependency
+  - 4.19 refer to pom.xml file
