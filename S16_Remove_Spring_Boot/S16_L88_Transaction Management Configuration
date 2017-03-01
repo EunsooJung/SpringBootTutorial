@@ -1,0 +1,8 @@
+Section 16: Removing Spring Boot
+    Lecture 88: Transaction Management Configuration
+
+1. Annotation driven Transaction Management Activation
+ 1.1 Open H2DataSourceConfig
+   - ej.springframework.config.H2DataSourceConfig.java
+ 1.2 Add @EnableTransactionManagement annotation on the H2DataSourceConfig class
+ 1.3 Implements TransactionManagementConfigurer
