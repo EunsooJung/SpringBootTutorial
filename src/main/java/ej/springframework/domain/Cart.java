@@ -8,14 +8,9 @@ import java.util.List;
  * Created by eunsoojung on 9/8/16.
  */
 @Entity
-public class Cart implements DomainObject {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-
-    @Version
-    private Integer version;
+public class Cart extends AbstractDomainClass {
+    // S16_L90
+    // public class Cart implements DomainObject {
 
     @OneToOne
     private User user;
@@ -24,23 +19,15 @@ public class Cart implements DomainObject {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cart", orphanRemoval = true)
     private List<CartDetail> cartDetails = new ArrayList<>();
 
-    @Override
-    public Integer getId() {
-        return id;
-    }
+/* S16_L90
 
-    @Override
-    public void setId(Integer id) {
-        this.id = id;
-    }
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
+private Integer id;
 
-    public Integer getVersion() {
-        return version;
-    }
-
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
+@Version
+private Integer version;
+*/
 
     public User getUser() {
         return user;
@@ -49,6 +36,28 @@ public class Cart implements DomainObject {
     public void setUser(User user) {
         this.user = user;
     }
+/*
+
+@Override
+public Integer getId() {
+return id;
+}
+
+@Override
+public void setId(Integer id) {
+this.id = id;
+}
+
+public Integer getVersion() {
+return version;
+}
+
+public void setVersion(Integer version) {
+this.version = version;
+}
+
+*/
+
 
     public List<CartDetail> getCartDetails() {
         return cartDetails;
