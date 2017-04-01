@@ -7,19 +7,23 @@ import java.math.BigDecimal;
  * Created by eunsoojung on 8/31/16.
  */
 @Entity
+public class Product extends AbstractDomainClass {
+/*
+// S16_L90
 public class Product implements DomainObject{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
+private Integer id;
 
-    @Version
-    private Integer version;
+@Version
+private Integer version;
+*/
 
     private String description;
     private BigDecimal price;
     private String imageUrl;
-
+/* // S16_L90
     public Integer getId() {
         return id;
     }
@@ -28,13 +32,14 @@ public class Product implements DomainObject{
         this.id = id;
     }
 
-    public Integer getVersion() {
-        return version;
-    }
 
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
+public Integer getVersion() {
+return version;
+}
+public void setVersion(Integer version) {
+this.version = version;
+}
+*/
 
     public String getDescription() {
         return description;
