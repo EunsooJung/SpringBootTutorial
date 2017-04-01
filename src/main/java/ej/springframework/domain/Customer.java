@@ -1,6 +1,9 @@
 package ej.springframework.domain;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
 /**
  * Created by eunsoojung on 9/1/16.
@@ -22,14 +25,13 @@ private Integer version;
     private String lastName;
     private String email;
     private String phoneNumber;
-
+/* Refactored for the S16_L90
     @Embedded
     private Address billingAddress;
 
     @Embedded
     private Address shippingAddress;
 
-/*
 private String addressLine1;
 private String addressLine1;
 private String addressLine2;
@@ -37,6 +39,13 @@ private String city;
 private String state;
 private String zipCode;
 */
+    // Added S16_L90
+    @Embedded
+    private Address billingAddress = new Address();
+
+    // Added S16_L90
+    @Embedded
+    private Address shippingAddress = new Address();
 
     @OneToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     private User user;
@@ -136,6 +145,14 @@ this.version = version;
     }
 */
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public Address getBillingAddress() {
         return billingAddress;
     }
@@ -150,14 +167,6 @@ this.version = version;
 
     public void setShippingAddress(Address shippingAddress) {
         this.shippingAddress = shippingAddress;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
 }
