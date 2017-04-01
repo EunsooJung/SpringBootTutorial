@@ -1,6 +1,8 @@
 package ej.springframework.domain;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 /**
  * Created by eunsoojung on 9/8/16.
@@ -26,7 +28,7 @@ private Integer version;
     private Product product;
 
     private Integer quantity;
-
+/* S16_L90
     @Override
     public Integer getId() {
         return id;
@@ -37,7 +39,7 @@ private Integer version;
         this.id = id;
     }
 
-/*
+
 public Integer getVersion() {
 return version;
 }
