@@ -168,5 +168,4 @@ this.version = version;
     public void setShippingAddress(Address shippingAddress) {
         this.shippingAddress = shippingAddress;
     }
-
 }
