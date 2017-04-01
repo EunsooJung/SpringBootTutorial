@@ -21,7 +21,7 @@ public class LoginServiceImpl implements LoginService {
         this.userService = userService;
     }
 
-    @Scheduled(fixedRate = 6000) // every 1 minute
+    @Scheduled(fixedRate = 60000) // every 1 minute
     @Override
     public void resetFailedLogins() {
 
