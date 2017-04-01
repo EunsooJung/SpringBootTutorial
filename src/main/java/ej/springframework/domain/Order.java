@@ -55,11 +55,18 @@ public class Order extends AbstractDomainClass {
         orderDetail.setOrder(this);
         orderDetails.add(orderDetail);
     }
-
-    public void removeDetail(OrderDetail orderDetail) {
-        orderDetail.setOrder(this);
+    // Added S16_L90
+    public void removeOrderDetail(OrderDetail orderDetail) {
+        orderDetail.setOrder(null);
         orderDetails.remove(orderDetail);
     }
+
+/* S16_L90
+public void removeDetail(OrderDetail orderDetail) {
+orderDetail.setOrder(this);
+orderDetails.remove(orderDetail);
+}
+*/
 
     public OrderStatus getOrderStatus() {
         return orderStatus;
