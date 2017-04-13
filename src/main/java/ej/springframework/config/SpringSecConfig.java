@@ -76,8 +76,9 @@ public class SpringSecConfig extends WebSecurityConfigurerAdapter {
                 .and().authorizeRequests().antMatchers("/user/**").hasAnyAuthority("ADMIN")
                 .and().exceptionHandling().accessDeniedPage("/access_denied");
 
-        http.csrf().disable();
-        http.headers().frameOptions().disable();
+       // S17_L92 : Removed
+        // http.csrf().disable();
+       // http.headers().frameOptions().disable();
     }
 //        http.csrf().disable();
 //        http.headers().frameOptions().disable();
