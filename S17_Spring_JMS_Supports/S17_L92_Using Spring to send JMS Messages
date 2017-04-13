@@ -1,0 +1,27 @@
+Section 17: Spring JMS Support
+ Lecture 92: Using Spring to send JMS Messages
+
+ 1. Add Spring JMS Maven Dependencies
+  1.1 Spring JMS
+    <dependency>
+  	    <groupId>org.springframework</groupId>
+  	    <artifactId>spring-jms</artifactId>
+    </dependency>
+
+  1.2 Apache ActiveMQ
+    <dependency>
+  		<groupId>org.apache.activemq</groupId>
+  		<artifactId>activemq-broker</artifactId>
+  	</dependency>
+
+ 2. Configuring Spring Boot for JMS
+  2.1 Add Spring Boot properties for JMS
+   - application.properties
+       spring.activemq.in-memory=true
+       spring.activemq.pooled=false
+
+ 3. Using Spring to send JMS messages
+  3.1 Add Spring JMS config
+   - ej.springframework.config.JMSConfig.java
+  3.2 Define JMS Interface
+   - ej.springframework.services.SenTextMessageService.java
