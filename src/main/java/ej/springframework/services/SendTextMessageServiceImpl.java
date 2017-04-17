@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import javax.jms.Queue;
 
 /**
- * Created by eunsoojung on 4/17/17.
+ * Created by Eunsoo Jung on 4/17/17.
  * S17_L92.3.3
  */
 @Component

@@ -16,6 +16,7 @@ import java.util.List;
 
 /**
  * Created by eunsoojung on 9/26/16.
+ * Refactring for S17_L92
  */
 @Service
 @Profile("springdatajpa")

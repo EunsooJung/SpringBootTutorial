@@ -8,6 +8,8 @@ import javax.jms.Queue;
 
 /**
  * Created by eunsoojung on 4/10/17.
+ *
+ * // S17_L92
  */
 @Configuration
 public class JMSConfig {
