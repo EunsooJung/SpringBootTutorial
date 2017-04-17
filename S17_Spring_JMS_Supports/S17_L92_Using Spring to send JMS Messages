@@ -25,3 +25,14 @@ Section 17: Spring JMS Support
    - ej.springframework.config.JMSConfig.java
   3.2 Define JMS Interface
    - ej.springframework.services.SenTextMessageService.java
+  3.3 Implements JMS Interface
+   - ej.springframework.services.SendTextMessageServiceImpl.java
+
+ 4. Applying JMS in to the ej.springframework.services.reposervices.ProductServiceRepoImpl.java
+  4.1 Add ProductToProductForm properties
+  4.2 Inject setter base ProductToProductForm dependency
+  4.3 Add SendTextMessageService properties
+  4.4 Inject setter base SendTextMessageService dependency
+  4.5 Add sendTextMessageService... into the List<?> listAll() method
+  4.6 Add sendTextMessageService... into the getById(..) method
+
